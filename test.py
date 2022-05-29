@@ -8,4 +8,5 @@ if __name__ == "__main__" :
     print("")
     print("test.py")
     print("")
+    print(imageio.__version__)
     

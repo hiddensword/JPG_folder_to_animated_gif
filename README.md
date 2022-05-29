@@ -43,25 +43,6 @@ Converting JPG files in a folder to an animated GIF file.
     $ deactivate
     ~~~
 
-## imageio 패키지 설치
-- imageio라는 패키지 설치 확인
-    ~~~
-    (gif) C:\WINDOWS\system32>python
-    Python 3.9.12 (main, Apr  4 2022, 05:22:27) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>> import imageio
-    >>> imageio.__version__
-    '2.9.0'
-    >>>
-    ~~~
-
-- imageio 설치
-    - https://anaconda.org/conda-forge/imageio
-    ~~~
-    > conda activate gif
-    > conda install -c conda-forge imageio
-    ~~~
-
 ## GitHub Repository clone 및 Visual Studio Code 실행
 - git clone
     ~~~
@@ -90,8 +71,30 @@ Converting JPG files in a folder to an animated GIF file.
     - `Ctrl + Shift + p`(command pallet)를 누른 후, `Python: Select Interpreter`를 선택
     - `+ Enter interpreter path ...` 선택
     - `Find ...` 선택    
-    - `C:\ProgramData\Anaconda3\envs\gif` 경로로 입력
-    - `python.exe` 선택
+    - `./.venv/bin/python` 경로로 입력
+
+## imageio 패키지 설치
+- imageio라는 패키지 설치 확인
+    ~~~
+    (.venv) apple@KDY-SB2:~/JPG_folder_to_animated_gif$ python
+    Python 3.6.9 (default, Mar 15 2022, 13:55:28) 
+    [GCC 8.4.0] on linux
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import imageio
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    ModuleNotFoundError: No module named 'imageio'
+    >>>
+    ~~~
+- numpy 설치
+    ~~~
+    $ source .venv/bin/activate
+    $ pip install numpy
+- imageio 설치
+    ~~~
+    $ pip install imageio==2.15.0
+    ~~~
+    - 위에서 설치된 numpy가 1.19.5라서 imageio의 버전을 맞춰줘야 함
 
 ## (참고) apt-upgrade중 에러
 ~~~
