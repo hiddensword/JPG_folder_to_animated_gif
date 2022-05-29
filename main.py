@@ -35,11 +35,17 @@ if __name__ == "__main__" :
     print("=========================")
     print("")
 
-    #path_input = r'C:/DeepExpress_traversability/220529_kdy_gif/output_2022-05-10-17-06-56/frame0168' # 사진 디렉토리
-    path_input = r'/mnt/c/DeepExpress_traversability/gif/output_2022-05-10-17-44-45/frame0579'
-    #path_output = r'C:/DeepExpress_traversability/220529_kdy_gif/output_2022-05-10-17-06-56' # 사진 디렉토리
-    path_output = r'/mnt/c/DeepExpress_traversability/gif/output_2022-05-10-17-44-45'
     file_type = r'jpg'  # 사진 확장자
-    save_gif_name = r'frame0579' # 완성 gif 이름
+
+    #========================
+    # output_2022-05-10-17-06-56'
+
+    path_output = r'/mnt/c/DeepExpress_traversability/gif/output_2022-05-10-17-06-56'
+    path_input = path_output + '/'
+
+    save_gif_name = r'frame0168' # 완성 gif 이름
+    path = path_input + save_gif_name
+    convert(path, path_output, file_type, save_gif_name)
+    print(path)
     
-    convert(path_input, path_output, file_type, save_gif_name)
+    #convert(path_input, path_output, file_type, save_gif_name)
