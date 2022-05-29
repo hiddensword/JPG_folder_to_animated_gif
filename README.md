@@ -25,6 +25,23 @@ Converting JPG files in a folder to an animated GIF file.
     $ sudo apt update && sudo apt upgrade
     $ sudo apt install python3-pip
     ~~~
+- venv 설치
+    ~~~
+    $ sudo apt install python3-venv
+    ~~~
+- 가상환경 만들기
+    ~~~
+    $ cd ~/JPG_folder_to_animated_gif/
+    $ python3 -m venv .venv
+    ~~~
+- 가상환경 활성화
+    ~~~
+    $ source .venv/bin/activate
+    ~~~
+- 가상환경 비활성화
+    ~~~
+    $ deactivate
+    ~~~
 
 ## imageio 패키지 설치
 - imageio라는 패키지 설치 확인
