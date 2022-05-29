@@ -2,6 +2,7 @@
 
 import os
 import imageio
+from PIL import Image
 
 def convert(path_input, path_output, file_type, save_gif_name) :
 
@@ -15,8 +16,17 @@ def convert(path_input, path_output, file_type, save_gif_name) :
             #print(file_name)
 
             file_path = os.path.join(path_input, file_name)
-            images.append(imageio.imread(file_path))
-            count = count + 1   # 불러드린 사진 파일 갯수 누적
+            
+            # 사진 읽어오기
+            img = imageio.imread(file_path)
+
+            # 사진 크기 줄이기 (1280, 720) → (640, 360)
+            img = Image.fromarray(img).resize((640, 360))
+
+            images.append(img)
+
+            # 불러드린 사진 파일 갯수 누적
+            count = count + 1
 
     print('{} images were loaded.'.format(count))
     print('\nPlease wait for saving your large animated GIF file.')
@@ -45,7 +55,7 @@ if __name__ == "__main__" :
 
     save_gif_name = r'frame0168' # 완성 gif 이름
     path = path_input + save_gif_name
+    print(path)    
     convert(path, path_output, file_type, save_gif_name)
-    print(path)
     
     #convert(path_input, path_output, file_type, save_gif_name)

@@ -96,6 +96,16 @@ Converting JPG files in a folder to an animated GIF file.
     ~~~
     - 위에서 설치된 numpy가 1.19.5라서 imageio의 버전을 맞춰줘야 함
 
+## gif 크기가 지나치게 커서 용량 줄이기
+- https://stackoverflow.com/questions/65733362/how-to-resize-an-image-using-imageio
+~~~
+import imageio
+from PIL import Image
+
+img = imageio.imread('path/to/your/image.png')
+img = Image.fromarray(img).resize((128, 128))
+~~~
+
 ## (참고) apt-upgrade중 에러
 ~~~
 Segmentation fault (core dumped)
